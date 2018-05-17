@@ -1,0 +1,24 @@
+version: "3.1"
+
+services:
+  database:
+    image: ffdb
+    networks:
+    - back-tier
+
+  api:
+    image: ffapi
+    networks:
+    - front-tier
+    - back-tier
+
+  ui:
+    image: ffui
+    ports:
+    - "3000:3000"
+    networks:
+    - front-tier
+
+networks:
+  front-tier:
+  back-tier:
