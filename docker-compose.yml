@@ -2,18 +2,18 @@ version: "3.1"
 
 services:
   database:
-    image: ffdb
+    image: leanderjanssen/db
     networks:
     - back-tier
 
   api:
-    image: ffapi
+    image: leanderjanssen/api
     networks:
     - front-tier
     - back-tier
 
   ui:
-    image: ffui
+    image: leanderjanssen/ui
     ports:
     - "3000:3000"
     networks:
